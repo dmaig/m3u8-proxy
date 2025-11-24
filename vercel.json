@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/proxy.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/proxy/m3u8",
+      "dest": "/api/proxy.js"
+    },
+    {
+      "src": "/proxy/ts",
+      "dest": "/api/proxy.js"
+    },
+    {
+      "src": "/",
+      "dest": "/api/proxy.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/proxy.js"
+    }
+  ],
+  "functions": {
+    "api/proxy.js": {
+      "maxDuration": 30
+    }
+  }
+}
