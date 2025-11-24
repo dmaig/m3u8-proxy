@@ -8,26 +8,16 @@
   ],
   "routes": [
     {
+      "src": "/",
+      "dest": "/api/proxy.js"
+    },
+    {
       "src": "/proxy/m3u8",
       "dest": "/api/proxy.js"
     },
     {
       "src": "/proxy/ts",
       "dest": "/api/proxy.js"
-    },
-    {
-      "src": "/",
-      "dest": "/api/proxy.js",
-      "methods": ["GET"]
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/proxy.js"
     }
-  ],
-  "functions": {
-    "api/proxy.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
