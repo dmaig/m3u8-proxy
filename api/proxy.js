@@ -51,7 +51,7 @@ module.exports = async (req, res) => {
     // 使用Promise.race实现超时控制
     const fetchPromise = fetch(url, {
       headers: {
-        'User-Agent': 'uni-app',
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 7.1.2; LIO-AN00 Build/N2G47H; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.70 Mobile Safari/537.36 uni-app Html5Plus/1.0 (Immersed/24.0)',
         'Referer': new URL(url).origin,
         'Accept': '*/*'
       }
